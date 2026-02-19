@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>AFSTI Project Dashboard</title>
+  <meta name="description"
+    content="Internal project dashboard for the Africa Food Systems and Trade Initiative — Baobab Impact × Dalberg Kenya for AGRA" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="#4CAF50" stroke-width="2" />
+        <path d="M14 6v8l5 3" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span>AFSTI Dashboard</span>
+    </div>
+    <nav>
+      <a href="#home" class="active" onclick="go('home',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 2L2 8v10h5v-5h6v5h5V8L10 2z" />
+        </svg>
+        <span>Command Center</span>
+      </a>
+      <a href="#corridors" onclick="go('corridors',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path
+            d="M10 1a7 7 0 00-7 7c0 5.25 7 11 7 11s7-5.75 7-11a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1110 5a2.5 2.5 0 010 5.5z" />
+        </svg>
+        <span>Corridor Map</span>
+      </a>
+      <a href="#valuechains" onclick="go('valuechains',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 3h14v2H3zm0 4h10v2H3zm0 4h14v2H3zm0 4h10v2H3z" />
+        </svg>
+        <span>Value Chains</span>
+      </a>
+      <a href="#investments" onclick="go('investments',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
+        </svg>
+        <span>Investment Cases</span>
+      </a>
+      <a href="#stakeholders" onclick="go('stakeholders',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 10a3 3 0 100-6 3 3 0 000 6zm-7 8a7 7 0 0114 0H3z" />
+        </svg>
+        <span>Stakeholders</span>
+      </a>
+      <a href="#pea" onclick="go('pea',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 3v14h14V3H3zm12 12H5V5h10v10zM7 7h2v6H7zm4 0h2v6h-2z" />
+        </svg>
+        <span>Political Economy</span>
+      </a>
+      <a href="#projections" onclick="go('projections',this,event)">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 17h14v-2H3v2zm0-5l4-4 3 3 7-7-1.4-1.4L10 7.2 7 4.2l-5.4 5.4L3 12z" />
+        </svg>
+        <span>2050 Projections</span>
+      </a>
+    </nav>
+    <div class="collapse-btn" onclick="toggleSidebar()">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M12.7 5.3L8 10l4.7 4.7-1.4 1.4L5.2 10l6.1-6.1z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== MAIN AREA ===== -->
+  <div class="main">
+    <div class="topbar">
+      <div class="breadcrumb" id="breadcrumb">
+        <a href="#home" onclick="go('home',null,event)">Home</a>
+      </div>
+      <div class="search-box">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M8 3a5 5 0 014.4 7.3l4.7 4.7-1.4 1.4-4.7-4.7A5 5 0 118 3zm0 2a3 3 0 100 6 3 3 0 000-6z" />
+        </svg>
+        <input type="text" placeholder="Search value chains, stakeholders…" id="searchInput"
+          oninput="handleSearch(this.value)" />
+      </div>
+    </div>
+    <div class="content" id="content">
+
+      <!-- PAGES LOADED VIA JS -->
+
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="pages/home.js"></script>
+  <script src="pages/corridors.js"></script>
+  <script src="pages/valuechains.js"></script>
+  <script src="pages/investments.js"></script>
+  <script src="pages/stakeholders.js"></script>
+  <script src="pages/pea.js"></script>
+  <script src="pages/projections.js"></script>
+</body>
+
+</html>
